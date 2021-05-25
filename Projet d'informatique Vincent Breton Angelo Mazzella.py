@@ -8,7 +8,7 @@
 
 
 
-#Partie 1 : La meilleure manière de se réprésenter la planche de puissance 4 en Python#
+#Partie 1 : La matrice meilleure manière de se réprésenter la planche de puissance 4 en Python#
 import numpy as np
 #Le tableau ou l'on fait coulisser les jetons sera représenté par une matrice dont l'utilisateur choisira la taille
 
@@ -16,7 +16,6 @@ import numpy as np
 #On demande donc à l'utilisateur la taille du tableau souhaité, ainsi que le nombre de jetons qu'il faudra aligner pour l'emporter 
 Colonnestableau = int(input("Veuillez entrer le nombre de colonnes du tableau souhaité" ))
 Lignestableau = int(input ("Veuillez entrer le nombre de lignes du tableau souhaités"))
-Victoire = int(input("Veuillez entrer le nombre de jetons que vous souhaitez voir alignés pour gagner"))
 
 #NB : il est important de mettre les valeurs demandée sous forme d'entiers, sinon Python les considère comme des chaines de caractères. La toute première erreur de code du projet.
 
@@ -83,7 +82,7 @@ jeu_terminé = False
 while jeu_terminé==False:
     #demander le choix du joueur 1
     if Tour == 0:
-        colonnejouée = int(input('Joueur 1 faites votre choix entre 0 et' + (str(Colonnestableau-1))))
+        colonnejouée = int(input('Joueur 1 faites votre choix entre 0 et ' + (str(Colonnestableau-1)+" : ")))
         if Espace_valide(tableau1,colonnejouée)==True:
             lignejouée = chercher_prochaine_ligne_ouverte(tableau1,colonnejouée)
             lacher_jeton(tableau1, lignejouée, colonnejouée, 1)
@@ -97,7 +96,7 @@ while jeu_terminé==False:
         
         #demander le choix joueur 2
     else: 
-        col = int(input('Joueur 2 faites votre choix entre 0 et ' + str(Lignestableau-1)))
+        colonnejouée = int(input('Joueur 1 faites votre choix entre 0 et ' + (str(Colonnestableau-1)+" : ")))
         if Espace_valide(tableau1,colonnejouée)==True:
             lignejouée = chercher_prochaine_ligne_ouverte(tableau1,colonnejouée)
             lacher_jeton(tableau1, lignejouée, colonnejouée, 2)
